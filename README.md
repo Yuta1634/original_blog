@@ -32,6 +32,7 @@
  |name|string|null:false|
  |email|string|null:false|
  |comment|text|null:false|
+ |post_id|integer|null:false|
 
  ## association
   -belongs_to :posts
