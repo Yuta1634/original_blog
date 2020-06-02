@@ -35,7 +35,7 @@
  |post_id|integer|null:false|
 
  ## association
-  -belongs_to :post
+ - belongs_to :post
 
  ## tagsテーブル
  |Column|Type|Options|
