@@ -24,7 +24,7 @@
  - hasmany :tags,through: :users_groups
  - hasmany :posts_tags
  - hasmany :comments
- - belongs_to :users
+ - belongs_to :user
 
  ## comments
  |Column|Type|Options|
@@ -35,7 +35,7 @@
  |post_id|integer|null:false|
 
  ## association
-  -belongs_to :posts
+  -belongs_to :post
 
  ## tagsテーブル
  |Column|Type|Options|
