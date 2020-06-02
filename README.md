@@ -15,6 +15,7 @@
 ## postsテーブル
  |Column|Type|Options|
  |------|----|-------|
+ |users_id|integer|null:false|
  |title|text|null:false|
  |body|text|unll:false|
  |posts_tags|integer|null:false,foreign_key:true|
