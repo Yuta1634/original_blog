@@ -27,6 +27,7 @@
 
  ## comments
  |Column|Type|Options|
+ |------|----|-------|
  |name|string|null:false|
  |email|string|null:false|
  |comment|text|null:false|
@@ -36,6 +37,7 @@
 
  ## tagsテーブル
  |Column|Type|Options|
+ |------|----|-------|
  |tags|string||
  |posts_tags|integer|foreign_key:true|
 
@@ -45,6 +47,7 @@
 
  ## posts_tagsテーブル
  |Column|Type|Options|
+ |------|----|-------|
  |post|references|foreign_key:true|
  |tag|references|foreign_key:true|
  
