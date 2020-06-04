@@ -4,11 +4,13 @@
   width:100vw;
   .header-logo{
     .header-logo__title{
+      display: block;
       text-decoration: none;
       font-size:70px;
       font-weight: bold;
       color:white;
       line-height: 150px;
+      text-align: center;
     }
   }
 }
