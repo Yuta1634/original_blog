@@ -1,0 +1,33 @@
+<div class="body">
+  <div class="contents">
+    <div class="blog">
+      <div class="blog--title">
+        <%= @post.title %>
+      </div>
+      <div class="blog--image">
+        <img src="" alt="no-image" class="content-image">
+      </div>
+      <div class="blog--text">
+        <%= simple_format @post.body %>
+      </div>
+    </div>
+    <div class="comments">
+      コメント一覧<br> <p>名前だけ表示されます</p>
+      <div class="comment">
+        <div class="comment--name">
+          名前：匿名希望
+        </div>
+        <div class="comment--time">
+          投稿時間：2020年6月13日
+        </div>
+      </div>
+      <div class="comment--text">
+        文字数すくな！！
+      </div>
+    </div>
+    <div class="comment--create">
+    コメント機能はただいま準備中
+    </div>
+  </div>
+  <%= render partial: "side_bar"%>
+</div>

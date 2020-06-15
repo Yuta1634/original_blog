@@ -1,0 +1,7 @@
+<h2>新規記事の投稿</h2>
+
+<%= form_with model: @post, class: :form, local: true do |form| %>
+  <%= form.text_field :title %>
+  <%= form.text_area :body %>
+  <%= form.submit '送信する'%>
+<% end %>

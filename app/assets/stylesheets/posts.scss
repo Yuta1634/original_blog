@@ -3,6 +3,7 @@
   height:150px;
   width:100vw;
   .header-logo{
+    display: flex;
     .header-logo__title{
       display: block;
       text-decoration: none;
@@ -10,24 +11,25 @@
       font-weight: bold;
       color:white;
       line-height: 150px;
-      text-align: center;
+      margin: 0 auto
     }
   }
 }
 
 .body{
   height: auto;
-  width: calc(100vw - 15vw);
   display: flex;
   padding:20px;
-  margin: 0 auto;
   background-color: gray;
+  margin: 0 auto;
   .contents{
     background-color: white;
+    width: 60%;
+    margin: 0 20px;
+    padding: 20px;
     .content{
       display: block;
       height: 220px;
-      width: 60vw;
       display:flex;
       margin-bottom:40px;
       color:black;
@@ -58,10 +60,22 @@
         }
       }
     }
+    .content:hover{
+      background-color:gray;
+      transition: all  0.6s ease;
+    }
   }
   .right-bar{
-    margin: 0 auto;
     background-color: white;
+    width: 30%;
+    margin: 0 20px;
+    &__btn{
+      text-decoration: none;
+      color:white;
+      float:right;
+      font-size: 1px;
+      cursor:default;
+    }
     &__search{
       margin: 30px 10px 0 10px;
     }

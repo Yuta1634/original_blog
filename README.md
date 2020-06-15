@@ -16,8 +16,9 @@
  |Column|Type|Options|
  |------|----|-------|
  |users_id|integer|null:false|
- |title|text|null:false|
- |body|text|unll:false|
+ |title|text||
+ |body|text||
+ |image|string||
  |posts_tags|integer|null:false,foreign_key:true|
 
  ## association
@@ -31,7 +32,7 @@
  |------|----|-------|
  |name|string|null:false|
  |email|string|null:false|
- |comment|text|null:false|
+ |comment|text||
  |post_id|integer|null:false|
 
  ## association
@@ -40,7 +41,7 @@
  ## tagsテーブル
  |Column|Type|Options|
  |------|----|-------|
- |tags|string||
+ |name|string|null:false|
  |posts_tags|integer|foreign_key:true|
 
  ## association

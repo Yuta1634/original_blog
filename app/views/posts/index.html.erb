@@ -1,30 +1,7 @@
 <div class="body">
   <div class="contents">
-    <a href="#" class="content">
-      <img src="" alt="no-image" class="content-image">
-      <div class="content__list">
-        <div class="content__list--title">初めての投稿</div>
-        <div class="content__list--text">皆様はじめまして、今回から初めてブログを投稿させていただきます。</div>
-        <div class="content__list--time">2020年6月4日</div>
-      </div>
-    </a>
-    <a href="#" class="content">
-      <img src="" alt="no-image" class="content-image">
-      <div class="content__list">
-        <div class="content__list--title">初めての投稿</div>
-        <div class="content__list--text">皆様はじめまして、今回から初めてブログを投稿させていただきます。</div>
-        <div class="content__list--time">2020年6月4日</div>
-      </div>
-    </a>
-
+    <%= render partial: "contents"%>
+    <%= paginate(@posts) %>
   </div>
-
-  <div class="right-bar">
-    <div class ="right-bar__search">
-      <input type="text" class="right-bar__search--text" placeholder="サイト内を検索">
-      <input type="submit" class="right-bar__search--btn" >
-    </div>
-    <div class="right-bar__tag"></div>
-  </div>
+  <%= render partial: "side_bar"%>
 </div>
-
