@@ -5,12 +5,20 @@
     font-size:30px;
     text-align: center;
   }
+  &--image{
+    text-align: center;
+    padding-top: 50px;
+  }
+  &--text{
+    line-height: 30px;
+    padding-top: 50px;
+  }
 }
 
 .comments{
   border-top: solid black 1px;
   padding:20px;
-  font-size: 20px;
+  font-size: 25px;
   .comment{
     display: flex;
     font-size: 16px;
@@ -21,16 +29,41 @@
   }
   .comment--text{
     font-size: 16px;
-    padding-top:5px;
+    padding-top:10px;
+    padding-bottom:10px ;
   }
 }
-.contents p{
-  padding-top:20px;
+
+.comments p{
   font-size: 16px;
-  font-weight: normal;
 }
 
-.comment-create{
+
+.comment--create{
   height: auto;
+  padding-top:20px ;
   border-top: solid black 1px;
+  .comment__text{
+    height: 90px;
+    &--name{
+      height: 40px;
+      width: calc( 100% - 20px );
+      padding: 0 10px;
+    }
+    &--addoress{
+      height: 40px;
+      width: calc( 100% - 20px );
+      padding: 0 10px;
+    }
+    &--text{
+      height: 130px;
+      width: calc( 100% - 20px );
+      padding: 5px 10px 5px 10px;
+    }
+    &--btn{
+      height: 40px;
+      width: 100%;
+      margin-top: 30px;
+    }
+  }
 }

@@ -5,28 +5,44 @@
         <%= @post.title %>
       </div>
       <div class="blog--image">
-        <img src="" alt="no-image" class="content-image">
+        <%= image_tag @post.image.url if @post.image? %>
       </div>
       <div class="blog--text">
         <%= simple_format @post.body %>
       </div>
     </div>
     <div class="comments">
-      コメント一覧<br> <p>名前だけ表示されます</p>
-      <div class="comment">
-        <div class="comment--name">
-          名前：匿名希望
+      コメント一覧<br>
+      <% @comments.each do |comment| %>
+        <div class="comment">
+          <div class="comment--name">
+            名前：<%= comment.name %>
+          </div>
+          <div class="comment--time">
+            投稿時間：<%= comment.created_at.strftime("%Y年%m月%d日") %>
+          </div>
         </div>
-        <div class="comment--time">
-          投稿時間：2020年6月13日
+        <div class="comment--text">
+          <%= comment.text %>
         </div>
-      </div>
-      <div class="comment--text">
-        文字数すくな！！
-      </div>
+      <% end %>
     </div>
     <div class="comment--create">
-    コメント機能はただいま準備中
+      <%= form_with(model: [@post, @comment], local: true) do |form| %>
+        <div class="comment__text">
+          名前
+          <%= form.text_field :name, class: "comment__text--name" %>
+        </div>
+        <div class="comment__text">
+          メールアドレス
+          <%= form.text_field :email, class: "comment__text--addoress" %>
+        </div>
+        <div class="comment__area">
+          コメント欄
+          <%= form.text_area :text, class: "comment__text--text" %>
+        </div>
+          <%= form.submit "コメントを送信する", class: "comment__text--btn" %>
+      <% end %>
     </div>
   </div>
   <%= render partial: "side_bar"%>

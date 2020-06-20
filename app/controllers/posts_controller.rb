@@ -19,6 +19,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments
   end
 
   def edit
@@ -26,19 +28,20 @@ class PostsController < ApplicationController
   end
 
   def update
-    post = Post.find(params[:id])
-    post.update(post_params)
+    @post = Post.find(params[:id])
+    @post.update(post_params)
     redirect_to post_path(post.id)
   end
 
   def delete
-    post = Post.find(params[:id])
-    post.destroy
+    @post = Post.find(params[:id])
+    @post.destroy
     redirect_tp root_path
   end
 
   private
   def post_params
-    params.require(:post).permit(:title, :body, :imege).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :body, :image).merge(user_id: current_user.id)
   end
+  
 end
