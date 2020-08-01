@@ -1,0 +1,33 @@
+.body
+  .contents
+    .blog
+      .blog--title
+        = @post.title
+      .blog--image
+        = image_tag @post.image.url if @post.image?
+      .blog--text
+        = simple_format @post.body
+    .comments
+      コメント一覧
+      %br/
+      - @comments.each do |comment|
+        .comment
+          .comment--name
+            名前：#{comment.name}
+          .comment--time
+            投稿時間：#{comment.created_at.strftime("%Y年%m月%d日")}
+        .comment--text
+          = comment.text
+    .comment--create
+      = form_with(model: [@post, @comment], local: true) do |form|
+        .comment__text
+          名前
+          \#{form.text_field :name, class: "comment__text--name"}
+        .comment__text
+          メールアドレス
+          \#{form.text_field :email, class: "comment__text--addoress"}
+        .comment__area
+          コメント欄
+          \#{form.text_area :text, class: "comment__text--text"}
+        = form.submit "コメントを送信する", class: "comment__text--btn"
+  = render partial: "side_bar"

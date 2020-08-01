@@ -1,0 +1,4 @@
+%h2 タグの作成
+= form_with model: @tag, class: :form, local: true do |form|
+  = form.text_field :text
+  = form.submit 'タグを作成する'

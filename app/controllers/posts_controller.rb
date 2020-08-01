@@ -2,10 +2,16 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all.order("created_at DESC").page(params[:page]).per(10)
+    @tags = Tag.all
   end
 
   def new
     @post = Post.new
+<<<<<<< Updated upstream
+    @post.tags
+=======
+    @tag = Tag.all
+>>>>>>> Stashed changes
   end
 
   def create
@@ -19,6 +25,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @tags = Tag.all
     @comment = Comment.new
     @comments = @post.comments
   end
@@ -41,7 +48,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :body, :image).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :body, :image, tag_ids: []).merge(user_id: current_user.id)
   end
   
 end

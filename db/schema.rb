@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_16_060124) do
+<<<<<<< Updated upstream
+ActiveRecord::Schema.define(version: 2020_06_23_044507) do
+=======
+ActiveRecord::Schema.define(version: 2020_06_23_031056) do
+>>>>>>> Stashed changes
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -22,8 +26,8 @@ ActiveRecord::Schema.define(version: 2020_06_16_060124) do
   end
 
   create_table "post_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "post_id"
-    t.bigint "tag_id"
+    t.bigint "post_id", null: false
+    t.bigint "tag_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_post_tags_on_post_id"
@@ -40,7 +44,11 @@ ActiveRecord::Schema.define(version: 2020_06_16_060124) do
   end
 
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
+<<<<<<< Updated upstream
+    t.string "text", null: false
+=======
+    t.string "name", null: false
+>>>>>>> Stashed changes
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

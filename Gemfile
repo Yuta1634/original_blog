@@ -68,3 +68,7 @@ gem 'kaminari'
 gem 'carrierwave'
 
 gem 'rmagick'
+
+gem 'pry-rails'
+
+gem 'haml-rails'
