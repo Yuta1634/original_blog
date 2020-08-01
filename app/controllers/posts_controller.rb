@@ -7,11 +7,8 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-<<<<<<< Updated upstream
     @post.tags
-=======
     @tag = Tag.all
->>>>>>> Stashed changes
   end
 
   def create
