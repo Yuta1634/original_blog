@@ -7,8 +7,8 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @post.tags
     @tag = Tag.all
+    @post.tags
   end
 
   def create
@@ -16,7 +16,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to root_path
     else
-      render:new
+      redirect_to action: :new
     end
   end
 

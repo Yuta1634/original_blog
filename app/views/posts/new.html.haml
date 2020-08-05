@@ -1,6 +1,7 @@
 %h2 新規記事の投稿
 - @tag.each do |tag|
-  = form_with model: [@post, tag], class: :form, local: true do |form|
+  = form_with model: @post, class: :form, local: true do |form|
+    = form. collection_check_boxes :tag_ids, Tag.all, :id, :text
     = form.text_field :title
     = form.file_field :image
     = form.text_area :body
