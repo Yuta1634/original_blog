@@ -6,18 +6,18 @@ class TagsController < ApplicationController
   def create
     @tag = Tag.create(tag_params)
     redirect_to root_path
-  end
-
-  def show
-    @tags = Tag.all
-    @tag = Tag.find(params[:id])
-    @posts = @tag.posts(params[:id])
-    @tag = Tag.new(tag_params)
     if @tag.save
       redirect_to root_path
     else
       render:new
     end
+  end
+
+  def show
+    @tags = Tag.all
+    @tag = Tag.find(params[:id])
+    @post = @tag.posts
+    @posts = Post.all.order("created_at DESC").page(params[:page]).per(10)
   end
 
   private
