@@ -5,7 +5,6 @@ class TagsController < ApplicationController
 
   def create
     @tag = Tag.create(tag_params)
-    redirect_to root_path
     if @tag.save
       redirect_to root_path
     else
@@ -16,8 +15,7 @@ class TagsController < ApplicationController
   def show
     @tags = Tag.all
     @tag = Tag.find(params[:id])
-    @post = @tag.posts
-    @posts = Post.all.order("created_at DESC").page(params[:page]).per(10)
+    @post = @tag.posts.order("created_at DESC").page(params[:page]).per(10)
   end
 
   private

@@ -1,7 +1,11 @@
 - @posts.each do |post|
   = link_to post_path(post.id), class: "content" do
-    .content-image= image_tag post.image.thumb.url if post.image?
+    .content-image
+      = image_tag post.image.thumb.url if post.image?
     .content__list
-      .content__list--title= post.title
-      .content__list--text= simple_format post.body.truncate(50)
-      .content__list--time= post.created_at.strftime("%Y年%m月%d日")
+      .content__list--title
+        = post.title
+      .content__list--text
+        = simple_format post.body.truncate(50)
+      .content__list--time
+        = post.created_at.strftime("%Y年%m月%d日")
