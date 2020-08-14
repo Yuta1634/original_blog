@@ -7,7 +7,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @tag = Tag.all
+    @tags = Tag.all
     @post.tags
   end
 
