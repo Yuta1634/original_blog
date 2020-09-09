@@ -6,7 +6,7 @@
       .blog--image
         = image_tag @post.image.url if @post.image?
       .blog--text
-        = simple_format @post.body
+        = simple_format markdown(@post.body).html_safe
       .blog--edit
       - if user_signed_in? && current_user.id == @post.user.id
         .blog--edit__btn

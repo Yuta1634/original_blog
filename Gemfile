@@ -72,3 +72,7 @@ gem 'rmagick'
 gem 'pry-rails'
 
 gem 'haml-rails'
+
+gem 'redcarpet', '~> 2.3.0'
+
+gem 'coderay'
