@@ -7,8 +7,9 @@
   - else
     = link_to "ログイン", new_user_session_path, class:"right-bar__btn"
   .right-bar__search
-    %input.right-bar__search--text{:placeholder => "サイト内を検索", :type => "text"}/
-    %input.right-bar__search--btn{:type => "submit"}/
+    =form_with(url: search_posts_path, local: true, method: :get, class: "right-bar__search__list") do |form|
+      = form.text_field :keyword, placeholder: "サイトを検索する", class: "right-bar__search__list__text"
+      = form.submit "検索", class: "right-bar__search__list__btn"
   .right-bar__tag
     - @tags.each do |tag|
       = link_to tag_path(tag[:id]), class: "right-bar__tag__list" do
