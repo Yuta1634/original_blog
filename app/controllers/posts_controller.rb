@@ -29,6 +29,8 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @tags = Tag.all
+    @post.tags
   end
 
   def update
@@ -37,10 +39,15 @@ class PostsController < ApplicationController
     redirect_to post_path(post.id)
   end
 
-  def delete
+  def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_tp root_path
+    redirect_to root_path
+  end
+
+  def search
+    @posts = Post.search(params[:keyword]).order("created_at DESC").page(params[:page]).per(10)
+    @tags = Tag.all
   end
 
   private

@@ -1,0 +1,19 @@
+.body
+  .contents
+    .post
+      %h2 新規記事の投稿
+      = form_with model: @post, class: :form, local: true do |form|
+        .post__tag
+          = form.collection_check_boxes :tag_ids, Tag.all, :id, :text
+        .post__title
+          #p タイトル
+          = form.text_field :title, class: "post__title__form"
+        .post__image
+          #p イメージ
+          = form.file_field :image
+        .post__body
+          #p 本文
+          = form.text_area :body, class: "post__body__form"
+        .post__btn
+          = form.submit '送信する', class: "post__btn__label"
+  = render partial: "side_bar"
