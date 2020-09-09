@@ -76,3 +76,7 @@ gem 'haml-rails'
 gem 'redcarpet', '~> 2.3.0'
 
 gem 'coderay'
+
+group :production do
+  gem 'unicorn', '5.4.1'
+end
