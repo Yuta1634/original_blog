@@ -15,7 +15,7 @@ set :rbenv_type, :user
 set :rbenv_ruby, '2.5.1' #カリキュラム通りに進めた場合、2.5.1か2.3.1です
 
 # どの公開鍵を利用してデプロイするか
-set :ssh_options, auth_methods: ['1fd3fdee144eee3f84ca0e891c60b7b23a70bc5c3652ca876bec1054b3f15b805f98da3c0bb5b832cdf814b0639e653754347b9e23dfc4ed76279b590e90c1c4'],
+set :ssh_options, auth_methods: ['publickey'],
                   keys: ['~/.ssh/MicroBlog.pem'] 
 
 # プロセス番号を記載したファイルの場所
