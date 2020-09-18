@@ -16,11 +16,11 @@
   ※ただし、こちらからアクセスすると閲覧のみとなります。</br>
 
   ### :投稿を行う場合</br>
-  ・URL：http://18.178.18.184/users/sign_in</br>
+  URL：http://18.178.18.184/users/sign_in</br>
 
   ### :テストアカウント</br>
-  ・メールアドレス：test@gmail.com</br>
-  ・パスワード：test1234</br>
+  メールアドレス：test@gmail.com</br>
+  パスワード：test1234</br>
 
 ## :orange_book: このアプリを作った理由
   ・プログラミングスクールで学んだことの復習</br>
